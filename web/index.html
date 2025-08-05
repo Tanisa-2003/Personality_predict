@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Personality Predictor</title>
+  <link rel="stylesheet" href="/web/style.css">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+  <button id="openPopup">🧠 Predict Personality</button>
+
+  <!-- Input Popup -->
+  <div id="popupForm" class="popup hidden">
+    <div class="popup-content">
+      <h2>Enter your text</h2>
+      <textarea id="userInput" rows="6" placeholder="Type something about yourself..."></textarea>
+      <div class="actions">
+        <button onclick="predict()">Predict</button>
+        <button onclick="closePopup()">Cancel</button>
+        <button onclick="clearInput()">Clear</button>
+      </div>
+    </div>
+  </div>
+
+    <!-- Result Popup -->
+    <div id="resultPopup" class="popup hidden">
+    <div class="popup-content result">
+        <span class="close-btn" onclick="closeResult()">&times;</span>
+        <h2>Your MBTI Type Is:</h2>
+        <p id="resultText">Loading...</p>
+        <p id="resultDesc" style="font-style: italic; color: #e3e3e3;"></p>
+        <button onclick="closeResult()">Close</button>
+    </div>
+    </div>
+
+    <!-- Loading Animation -->
+    <div id="loading" class="hidden">🔄 Loading...</div>
+
+  <script src="/web/script.js"></script>
+</body>
+</html>
